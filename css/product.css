@@ -1,0 +1,22 @@
+.content-product {
+    display: flex;
+    flex-grow: 1;
+    border:1px solid black;
+}
+.content-product__left, .content-product__right {
+    border: 1px solid rgb(238, 6, 6);
+    flex-basis: 50%;
+}
+
+
+@media (max-width:991px) {
+    .content-product {
+        flex-direction: column;
+    }
+    .content-product__left {
+        flex-basis: 100%;
+    }
+    .content-product__right {
+            flex-basis: 100%;
+        }
+}
