@@ -46,8 +46,9 @@ const cardArray = [
 ];
 
 const render = (cardList) => {
+  cardWrapper.innerHTML = '';
   cardList.forEach((item, idx) => {
-    console.log(item);
+    console.log('пошли');
     cardWrapper.insertAdjacentHTML(
       `beforeend`,
       `<a href="product.html" class="content-main__list-item">
@@ -69,17 +70,17 @@ const render = (cardList) => {
   });
 };
 
-const fiteredArray = (arrray, value) => {
-  console.log(arrray);
+const fiteredArray = (array, value) => {
+  //console.log(array);
   console.log(value);
 
-  return arrrayfilter((item) => {
-    return item.title.includes('Первый');
+  return array.filter((item) => {
+    return item.title.includes(value);
   });
 };
 
 render(cardArray);
 
 searchBtn.addEventListener('click', () => {
-  render(cardArray);
+  render(fiteredArray(cardArray, searchInput.value));
 });
